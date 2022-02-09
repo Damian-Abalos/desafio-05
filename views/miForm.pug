@@ -1,0 +1,17 @@
+extend pageForm 
+block Form
+    div(class="container w-50")
+        form(method="POST" action="/productos" style="text-align: center;") 
+            div(class="card border-primary m-3 p-3") 
+                div(style="margin-bottom:1em;") 
+                    label(style="display: block;" for="")='Ingresar nombre'
+                    input(style="display: block; margin: auto;" type="text" name="title") 
+                div(style="margin-bottom:1em;")  
+                    label(style="display: block;" for="")='Ingresar precio'
+                    input(style="display: block; margin: auto;" type="text" name="price") 
+                div(style="margin-bottom:1em;")  
+                    label(style="display: block;" for="")='Ingresar url imagen'
+                    input(style="display: block; margin: auto;" type="text" name="thumbnail") 
+                button(class="m-auto" type="submit" value="send")="Cargar"
+    div(style="text-align: center;margin-top:2em") 
+        a(href="http://localhost:8080/productos")='Productos cargados'
