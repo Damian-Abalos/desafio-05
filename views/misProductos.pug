@@ -1,13 +1,19 @@
 extend pageProductos 
 block Productos
     h2(class="danger text-center")='Productos cargados'
-    div(class="table-responsive") 
-        table(class="table table-dark") 
-            tr(class="warning") 
-                th(class="danger")='Nombre'
-                th='Precio'
-                th='Imagen'
-            div=productos
-    h3 
+    if listaProductos.length > 0
+        div(class="table-responsive") 
+            table(class="table table-dark") 
+                tr(class="warning") 
+                    th(class="danger")='Nombre'
+                    th='Precio'
+                    th='Imagen'
+                each producto of listaProductos
+                    tr  
+                        td= producto.title
+                        td= producto.price 
+                        td: img(src=producto.thumbnail, alt="", style="max-width: 50px;")
+    else 
+        h3(class="text-center")="No hay productos"
     div(style="text-align: center;margin-top:2em") 
         a(href="http://localhost:8080/")="Formulario"             
